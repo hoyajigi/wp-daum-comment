@@ -1,0 +1,30 @@
+.daumButton{
+    width:  202px;
+    height: 46px;
+    display: block;
+    background-image: url('../bt/bt_long.png');
+    background-size: 100%;
+	background-repeat: no-repeat;
+}
+.daumButton:hover {
+    background-image: url('../bt/bt_long_hover.png');
+}
+.daumButton:active {
+    background-image: url('../bt/bt_long_press.png');
+}
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+    .daumButton{
+	    width:  202px;
+	    height: 46px;
+	    display: block;
+	    background-image: url('../2x/bt_long_2x.png');
+	}
+	.daumButton:hover {
+	    background-image: url('../2x/bt_hover_2x.png');
+	}
+	.daumButton:active {
+	    background-image: url('../2x/bt_press_2x.png');
+	}
+}
