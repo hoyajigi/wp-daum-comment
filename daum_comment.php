@@ -37,9 +37,9 @@ if ( !function_exists( 'add_action' ) ) {
 			var expires = "expires="+d.toGMTString();
 			document.cookie = "DAUM_OAUTH2_ACCESS_TOKEN" + "=" + name + "; " + expires+"; path=/";
 			window.opener.location.reload(false);
-			self.opener = self;
-			window.close();
 		}
+		self.opener = self;
+		window.close();
 	}
 	catch(e){}
 </script>
