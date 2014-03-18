@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Daum Profile
+Plugin Name: Daum Profile Comment
 Plugin URI: http://github.com/daumdna
 Description: Social comments with Daum Profile API.
 Version: 0.1
@@ -56,7 +56,7 @@ if (!class_exists('DaumProfileComments')){
 
         function __construct() {
         	$this->url = plugins_url('assets/', __FILE__);
-			
+
 			add_filter('comment_form_top',array($this, 'add_socialcomments_tmplate'));
 			add_action( 'wp_enqueue_scripts', array($this,'enqueue_style' ));
 			add_filter('wp_get_current_commenter',array($this,'invoke_commenter'));
@@ -67,7 +67,7 @@ if (!class_exists('DaumProfileComments')){
 				return $_COOKIE["DAUM_OAUTH2_ACCESS_TOKEN"];
 			return false;
 		}
-		
+
 		function invoke_commenter($arg) {
 			if($this->getAccessTokenFromCookie()){
 				$response=wp_remote_get( 'https://apis.daum.net/user/v1/show.json?access_token='.$this->getAccessTokenFromCookie());
